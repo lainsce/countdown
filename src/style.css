@@ -43,15 +43,21 @@
 
 .event-list row {
   background: @window_bg_color;
-  padding: 4px 8px;
   margin-bottom: 4px;
-}
-
-.event-row {
-  background: none;
 }
 .event-list .event-row {
   background: none;
+  padding: 8px 0;
+  margin-bottom: 0px;
+}
+.event-row button {
+  background: none;
+  color: #ba1b1b;
+  margin: 0;
+}
+.event-row button:hover {
+  background: #ba1b1b;
+  color: #fff;
 }
 
 .event-list row:hover {
@@ -72,4 +78,9 @@
 
 .event-list:last-child {
   border-radius: 4px 4px 8px 8px;
+}
+
+.dialog-event list {
+  background: @view_bg_color;
+  box-shadow: none;
 }

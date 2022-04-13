@@ -56,6 +56,7 @@ sources = [
   'src/ViewModels/pasteventviewmodel.vala',
   'src/Views/pastlistview.ui.vala',
   'src/Utils/file.vala',
+  'src/Utils/misc.vala',
   'src/Utils/obs_list.vala',
   'src/Utils/sorter.vala',
   'src/Utils/thread.vala',

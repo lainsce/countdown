@@ -21,6 +21,7 @@ namespace Countdown {
         public string id { get; set; default = Uuid.string_random (); }
         public string title { get; set; }
         public string date { get; set; }
+        public bool passed { get; set; }
 
         public static Event from_json (Json.Node node) requires (node.get_node_type () == OBJECT) {
             return (Event) Json.gobject_deserialize (typeof (Event), node);

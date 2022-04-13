@@ -18,6 +18,12 @@
 */
 [GtkTemplate (ui = "/io/github/lainsce/Countdown/eventrowcontent.ui")]
 public class Countdown.EventRowContent : Adw.Bin {
+    [GtkChild]
+	unowned Gtk.Button delete_button;
+
+	public EventViewModel vm { get; set; }
+    public PastEventViewModel pvm { get; set; }
+
     Event? _event;
     public Event? event {
         get { return _event; }
@@ -26,6 +32,15 @@ public class Countdown.EventRowContent : Adw.Bin {
                 return;
 
             _event = value;
+
+            delete_button.clicked.connect (() => {
+                print ("Deleted event!\n");
+                if (_event.passed == true) {
+                    ((MainWindow)MiscUtils.find_ancestor_of_type<MainWindow>(this)).past_view_model.delete_event (_event);
+                } else {
+                    ((MainWindow)MiscUtils.find_ancestor_of_type<MainWindow>(this)).view_model.delete_event (_event);
+                }
+            });
         }
     }
 
@@ -58,9 +73,9 @@ public class Countdown.EventRowContent : Adw.Bin {
         }
         
         if (int.parse(res) < 0) {
-            return (int.parse(res) * -1).to_string() + "\ndays"; 
+            return (int.parse(res) * -1).to_string();
         } else {
-            return res + "\ndays";
+            return res;
         }
     }
 }

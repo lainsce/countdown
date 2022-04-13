@@ -7,35 +7,70 @@
         <class name="event-row" />
       </style>
       <child type="prefix">
-        <object class="GtkLabel">
+        <object class="GtkBox">
+          <property name="spacing">6</property>
           <property name="halign">start</property>
-          <property name="ellipsize">end</property>
-          <property name="single-line-mode">yes</property>
-          <binding name="label">
-            <lookup name="title" type="CountdownEvent">
-              <lookup name="event">CountdownEventRowContent</lookup>
-            </lookup>
-          </binding>
-          <style>
-            <class name="title-4"/>
-          </style>
+              <property name="valign">center</property>
+          <child>
+            <object class="GtkButton" id="delete_button">
+              <property name="icon-name">user-trash-symbolic</property>
+              <style>
+                <class name="title-4"/>
+              </style>
+            </object>
+          </child>
+          <child>
+            <object class="GtkLabel">
+              <property name="ellipsize">end</property>
+              <property name="single-line-mode">yes</property>
+              <binding name="label">
+                <lookup name="title" type="CountdownEvent">
+                  <lookup name="event">CountdownEventRowContent</lookup>
+                </lookup>
+              </binding>
+              <style>
+                <class name="title-4"/>
+              </style>
+            </object>
+          </child>
         </object>
       </child>
       <child type="suffix">
-        <object class="GtkLabel">
-          <property name="halign">start</property>
-          <property name="ellipsize">end</property>
-          <property name="justify">center</property>
-          <binding name="label">
-            <closure type="gchararray" function="get_date_line">
-              <lookup name="date" type="CountdownEvent">
-                <lookup name="event">CountdownEventRowContent</lookup>
-              </lookup>
-            </closure>
-          </binding>
-          <style>
-            <class name="title-4"/>
-          </style>
+        <object class="GtkBox">
+          <property name="orientation">vertical</property>
+          <property name="valign">center</property>
+          <property name="halign">center</property>
+          <child>
+            <object class="GtkLabel">
+              <property name="halign">center</property>
+              <property name="ellipsize">end</property>
+              <property name="justify">center</property>
+              <property name="use-markup">1</property>
+              <binding name="label">
+                <closure type="gchararray" function="get_date_line">
+                  <lookup name="date" type="CountdownEvent">
+                    <lookup name="event">CountdownEventRowContent</lookup>
+                  </lookup>
+                </closure>
+              </binding>
+              <style>
+                <class name="title-4"/>
+                <class name="tabular"/>
+              </style>
+            </object>
+          </child>
+          <child>
+            <object class="GtkLabel">
+              <property name="halign">center</property>
+              <property name="ellipsize">end</property>
+              <property name="justify">center</property>
+              <property name="use-markup">1</property>
+              <property name="label" translatable="yes">days</property>
+              <style>
+                <class name="caption"/>
+              </style>
+            </object>
+          </child>
         </object>
       </child>
     </object>

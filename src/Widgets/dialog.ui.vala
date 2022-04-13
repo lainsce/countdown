@@ -61,8 +61,10 @@ namespace Countdown {
             }
             
             if (res < 0) {
+                event.passed = true;
                 pvm.create_new_event (event);
             } else {
+                event.passed = false;
                 vm.create_new_event (event);
             }
             this.dispose ();
