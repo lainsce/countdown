@@ -4,13 +4,13 @@
     "runtime-version" : "42",
     "sdk" : "org.gnome.Sdk",
     "command" : "io.github.lainsce.Countdown",
-    "desktop-file-name-suffix" : " (Development)",
     "finish-args" : [
         "--share=ipc",
         "--socket=fallback-x11",
         "--device=dri",
         "--socket=wayland"
     ],
+    "desktop-file-name-suffix" : " (Development)",
     "cleanup" : [
         "/include",
         "/lib/pkgconfig",

@@ -2,7 +2,7 @@
 Name=Countdown
 Exec=io.github.lainsce.Countdown
 Icon=@icon@
-Keywords=color;palette;library;hue;swatch;
+Keywords=event;countdown;days;
 Terminal=false
 Type=Application
 StartupNotify=true
