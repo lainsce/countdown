@@ -36,9 +36,75 @@ public class Countdown.EventRowContent : Adw.Bin {
             delete_button.clicked.connect (() => {
                 print ("Deleted event!\n");
                 if (_event.passed == true) {
-                    ((MainWindow)MiscUtils.find_ancestor_of_type<MainWindow>(this)).past_view_model.delete_event (_event);
+                    var dialog = new Gtk.MessageDialog (((MainWindow)MiscUtils.find_ancestor_of_type<MainWindow>(this)), 0, 0, 0, null);
+                    dialog.modal = true;
+
+                    dialog.set_title (_("Delete Past Event?"));
+                    dialog.text = (_("Deleting this past event will not save it in the past log and will stop tracking the days since the event happened."));
+
+                    dialog.add_button (_("Cancel"), Gtk.ResponseType.CANCEL);
+                    var no_button = dialog.add_button (_("Delete"), Gtk.ResponseType.OK);
+                    no_button.get_style_context ().add_class ("destructive-action");
+
+                    dialog.response.connect ((response_id) => {
+                        switch (response_id) {
+                            case Gtk.ResponseType.OK:
+                                ((MainWindow)MiscUtils.find_ancestor_of_type<MainWindow>(this)).past_view_model.delete_event (_event);;
+                                dialog.close ();
+                                break;
+                            case Gtk.ResponseType.NO:
+                                dialog.close ();
+                                break;
+                            case Gtk.ResponseType.CANCEL:
+                            case Gtk.ResponseType.CLOSE:
+                            case Gtk.ResponseType.DELETE_EVENT:
+                            default:
+                                dialog.close ();
+                                return;
+                        }
+                    });
+
+                    if (dialog != null) {
+                        dialog.present ();
+                        return;
+                    } else {
+                        dialog.show ();
+                    }
                 } else {
-                    ((MainWindow)MiscUtils.find_ancestor_of_type<MainWindow>(this)).view_model.delete_event (_event);
+                    var dialog = new Gtk.MessageDialog (((MainWindow)MiscUtils.find_ancestor_of_type<MainWindow>(this)), 0, 0, 0, null);
+                    dialog.modal = true;
+
+                    dialog.set_title (_("Delete Upcoming Event?"));
+                    dialog.text = (_("Deleting this upcoming event will not save it in the upcoming log and will stop tracking the days until the event happens."));
+
+                    dialog.add_button (_("Cancel"), Gtk.ResponseType.CANCEL);
+                    var no_button = dialog.add_button (_("Delete"), Gtk.ResponseType.OK);
+                    no_button.get_style_context ().add_class ("destructive-action");
+
+                    dialog.response.connect ((response_id) => {
+                        switch (response_id) {
+                            case Gtk.ResponseType.OK:
+                                ((MainWindow)MiscUtils.find_ancestor_of_type<MainWindow>(this)).view_model.delete_event (_event);;
+                                dialog.close ();
+                                break;
+                            case Gtk.ResponseType.NO:
+                                dialog.close ();
+                                break;
+                            case Gtk.ResponseType.CANCEL:
+                            case Gtk.ResponseType.CLOSE:
+                            case Gtk.ResponseType.DELETE_EVENT:
+                            default:
+                                dialog.close ();
+                                return;
+                        }
+                    });
+
+                    if (dialog != null) {
+                        dialog.present ();
+                        return;
+                    } else {
+                        dialog.show ();
+                    }
                 }
             });
         }
