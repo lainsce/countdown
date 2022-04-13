@@ -1,0 +1,11 @@
+.main-box {
+  border: 1px solid @borders;
+}
+
+.list-action-button {
+  border: 1px solid @borders;
+}
+
+.event-list row:not(.event-row) {
+  border: 1px solid @borders;
+}
