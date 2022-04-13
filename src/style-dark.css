@@ -10,3 +10,13 @@
 @define-color view_fg_color #eae1d9;
 @define-color headerbar_fg_color #eae1d9;
 @define-color borders alpha(#9b8f80, 0.5);
+
+.event-row button {
+  background: none;
+  color: #ffb4a9;
+  margin: 0;
+}
+.event-row button:hover {
+  background: #ffb4a9;
+  color: #680003;
+}
