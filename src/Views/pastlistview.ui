@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <interface>
-  <template class="CountdownUpcomingListView" parent="CountdownView">
+  <template class="CountdownPastListView" parent="CountdownView">
     <child>
       <object class="GtkBox" id="box">
         <property name="orientation">vertical</property>
@@ -27,7 +27,7 @@
                         <property name="model">
                           <object class="GtkSortListModel">
                             <binding name="model">
-                              <lookup name="events">CountdownUpcomingListView</lookup>
+                              <lookup name="events">CountdownPastListView</lookup>
                             </binding>
                             <property name="sorter">
                               <object class="CountdownEventSorter"/>

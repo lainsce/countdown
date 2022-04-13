@@ -8,5 +8,9 @@
     <file alias="eventrow.ui">Widgets/eventrow.ui</file>
     <file alias="eventrowcontent.ui">Widgets/eventrowcontent.ui</file>
     <file alias="upcominglistview.ui">Views/upcominglistview.ui</file>
+    <file alias="pastlistview.ui">Views/pastlistview.ui</file>
+    
+    <file alias="style.css">style.css</file>
+    <file alias="style-dark.css">style-dark.css</file>
   </gresource>
 </gresources>

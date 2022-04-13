@@ -9,10 +9,12 @@ namespace Countdown {
         public unowned Gtk.Entry event_date_entry;
 
         public EventViewModel vm { get; construct; }
+        public PastEventViewModel pvm { get; construct; }
 
-        public Dialog (EventViewModel vm) {
+        public Dialog (EventViewModel vm, PastEventViewModel pvm) {
             Object (
-                vm: vm
+                vm: vm,
+                pvm: pvm
             );
         }
 
@@ -33,8 +35,32 @@ namespace Countdown {
             var event = new Event ();
             event.title = event_name_entry.get_text ();
             event.date = event_date_entry.get_text ();
+            
+            GLib.TimeSpan res = 0;
+            try {
+                var reg = new Regex("""(?m)(?<day>\d{2})/(?<month>\d{2})/(?<year>\d{4})""");
+                GLib.MatchInfo match;
 
-            vm.create_new_event (event);
+                if (reg.match (event.date, 0, out match)) {
+                    var e = new GLib.DateTime.now_local ();
+                    var d = new DateTime.local (int.parse(match.fetch_named ("year")),
+                                                int.parse(match.fetch_named ("month")),
+                                                int.parse(match.fetch_named ("day")),
+                                                0,
+                                                0,
+                                                0.0);
+
+                    res = d.difference(e) / 86400000000;
+                }
+            } catch (GLib.RegexError re) {
+                warning ("%s".printf(re.message));
+            }
+            
+            if (res < 0) {
+                pvm.create_new_event (event);
+            } else {
+                vm.create_new_event (event);
+            }
             this.dispose ();
         }
 

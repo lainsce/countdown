@@ -3,6 +3,9 @@
 <template class="CountdownEventRowContent" parent="AdwBin">
   <property name="child">
     <object class="AdwActionRow">
+      <style>
+        <class name="event-row" />
+      </style>
       <child type="prefix">
         <object class="GtkLabel">
           <property name="halign">start</property>

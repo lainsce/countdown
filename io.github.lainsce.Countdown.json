@@ -1,9 +1,10 @@
 {
-    "app-id" : "io.github.lainsce.Countdown",
-    "runtime" : "org.gnome.Platform",
+    "app-id" : "io.github.lainsce.Countdown.Devel",
+    "runtime" : "org.gnome.Sdk",
     "runtime-version" : "42",
     "sdk" : "org.gnome.Sdk",
     "command" : "io.github.lainsce.Countdown",
+    "desktop-file-name-suffix" : " (Development)",
     "finish-args" : [
         "--share=ipc",
         "--socket=fallback-x11",
@@ -27,6 +28,9 @@
             "name" : "Countdown",
             "builddir" : true,
             "buildsystem" : "meson",
+            "config-opts" : [
+                "-Ddevelopment=true"
+            ],
             "sources" : [
                 {
                     "type" : "dir",

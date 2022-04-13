@@ -56,6 +56,11 @@ public class Countdown.EventRowContent : Adw.Bin {
         } catch (GLib.RegexError re) {
             warning ("%s".printf(re.message));
         }
-        return res + "\ndays";
+        
+        if (int.parse(res) < 0) {
+            return (int.parse(res) * -1).to_string() + "\ndays"; 
+        } else {
+            return res + "\ndays";
+        }
     }
 }

@@ -24,8 +24,11 @@ public class Countdown.Application : Adw.Application {
 
         var repo = new EventRepository ();
         var view_model = new EventViewModel (repo);
+        
+        var prepo = new PastEventRepository ();
+        var pview_model = new PastEventViewModel (prepo);
 
-        new MainWindow (this, view_model);
+        new MainWindow (this, view_model, pview_model);
     }
     protected override void activate () {
         active_window?.present ();

@@ -22,6 +22,7 @@ namespace Countdown {
 	    unowned Gtk.MenuButton menu_button;
 
 	    public EventViewModel view_model { get; construct; }
+	    public PastEventViewModel past_view_model { get; construct; }
 
 	    public SimpleActionGroup actions { get; construct; }
         public const string ACTION_PREFIX = "win.";
@@ -36,10 +37,11 @@ namespace Countdown {
         };
 
         public Adw.Application app { get; construct; }
-		public MainWindow (Adw.Application app, EventViewModel view_model) {
+		public MainWindow (Adw.Application app, EventViewModel view_model, PastEventViewModel past_view_model) {
 			Object (
 			    application: app,
 			    view_model: view_model,
+			    past_view_model: past_view_model,
 			    app: app
 			);
 		}
@@ -72,7 +74,7 @@ namespace Countdown {
                 add_css_class ("devel");
             }
 
-            this.set_size_request (360, 100);
+            this.set_size_request (360, 360);
 			this.show ();
 		}
 
@@ -86,9 +88,19 @@ namespace Countdown {
         public void on_event_update_requested (Event event) {
             view_model.update_event (event);
         }
+        
+        [GtkCallback]
+        void on_past_event_requested () {
+            past_view_model.create_new_event (null);
+        }
+
+        [GtkCallback]
+        public void on_past_event_update_requested (Event event) {
+            past_view_model.update_event (event);
+        }
 
         public void action_new_event () {
-            var new_event_dialog = new Widgets.Dialog (view_model);
+            var new_event_dialog = new Widgets.Dialog (view_model, past_view_model);
             new_event_dialog.set_transient_for (this);
             new_event_dialog.show ();
         }

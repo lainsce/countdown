@@ -1,0 +1,12 @@
+@define-color accent_color #ffba4b;
+@define-color accent_bg_color #ffb94d;
+@define-color accent_fg_color #452b00;
+@define-color window_bg_color #1f1b16;
+@define-color view_bg_color #34302a;
+@define-color headerbar_bg_color #1f1b16;
+@define-color popover_bg_color #34302a;
+@define-color popover_fg_color #eae1d9;
+@define-color window_fg_color #eae1d9;
+@define-color view_fg_color #eae1d9;
+@define-color headerbar_fg_color #eae1d9;
+@define-color borders alpha(#9b8f80, 0.5);
