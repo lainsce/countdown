@@ -50,14 +50,25 @@ public class Countdown.EventRowContent : Adw.Bin {
         );
     }
 
+    construct {
+        Timeout.add_seconds (86399, () => {
+            update_date_line (event.date);
+        });
+    }
+
     [GtkCallback]
     string get_date_line () {
+        return update_date_line (event.date);
+    }
+
+    public string update_date_line (string date) {
+        print ("Updated event!\n");
         var res = "";
         try {
             var reg = new Regex("""(?m)(?<day>\d{2})/(?<month>\d{2})/(?<year>\d{4})""");
             GLib.MatchInfo match;
 
-            if (reg.match (event.date, 0, out match)) {
+            if (reg.match (date, 0, out match)) {
                 var e = new GLib.DateTime.now_local ();
                 var d = new DateTime.local (int.parse(match.fetch_named ("year")),
                                             int.parse(match.fetch_named ("month")),
