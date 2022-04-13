@@ -60,11 +60,41 @@
             <child>
               <object class="AdwActionRow">
                 <property name="title" translatable="yes">Event Date</property>
-                <property name="subtitle" translatable="yes">Formatted as DD/MM/YYYY</property>
                 <child type="suffix">
-                  <object class="GtkEntry" id="event_date_entry">
-                    <property name="valign">center</property>
-                    <property name="max_width_chars">10</property>
+                  <object class="GtkBox">
+                    <property name="orientation">horizontal</property>
+                    <property name="spacing">3</property>
+                    <child>
+                      <object class="GtkEntry" id="event_date_day_entry">
+                        <property name="valign">center</property>
+                        <property name="max_width_chars">2</property>
+                        <property name="placeholder_text">DD</property>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkLabel">
+                        <property name="label">/</property>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkEntry" id="event_date_month_entry">
+                        <property name="valign">center</property>
+                        <property name="max_width_chars">2</property>
+                        <property name="placeholder_text">MM</property>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkLabel">
+                        <property name="label">/</property>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkEntry" id="event_date_year_entry">
+                        <property name="valign">center</property>
+                        <property name="max_width_chars">4</property>
+                        <property name="placeholder_text">YYYY</property>
+                      </object>
+                    </child>
                   </object>
                 </child>
               </object>

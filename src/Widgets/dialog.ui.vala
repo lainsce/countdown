@@ -6,7 +6,11 @@ namespace Countdown {
         [GtkChild]
         public unowned Gtk.Entry event_name_entry;
         [GtkChild]
-        public unowned Gtk.Entry event_date_entry;
+        public unowned Gtk.Entry event_date_day_entry;
+        [GtkChild]
+        public unowned Gtk.Entry event_date_month_entry;
+        [GtkChild]
+        public unowned Gtk.Entry event_date_year_entry;
 
         public EventViewModel vm { get; construct; }
         public PastEventViewModel pvm { get; construct; }
@@ -20,7 +24,7 @@ namespace Countdown {
 
         construct {
             event_name_entry.notify["text"].connect (() => {
-                event_date_entry.notify["text"].connect (() => {
+                event_date_year_entry.notify["text"].connect (() => {
                     if (event_name_entry.get_text () != "") {
                         new_button.sensitive = true;
                     } else {
@@ -34,7 +38,7 @@ namespace Countdown {
         public void on_new_event_requested () {
             var event = new Event ();
             event.title = event_name_entry.get_text ();
-            event.date = event_date_entry.get_text ();
+            event.date = event_date_day_entry.get_text () + "/" + event_date_month_entry.get_text () + "/" + event_date_year_entry.get_text ();
             
             GLib.TimeSpan res = 0;
             try {
