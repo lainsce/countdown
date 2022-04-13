@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gresources>
+  <gresource prefix="/io/github/lainsce/Countdown">
+    <file alias="mainwindow.ui">Widgets/mainwindow.ui</file>
+    <file alias="dialog.ui">Widgets/dialog.ui</file>
+    <file alias="menu.ui">Widgets/menu.ui</file>
+    <file alias="keys.ui">Widgets/keys.ui</file>
+    <file alias="eventrow.ui">Widgets/eventrow.ui</file>
+    <file alias="eventrowcontent.ui">Widgets/eventrowcontent.ui</file>
+    <file alias="upcominglistview.ui">Views/upcominglistview.ui</file>
+  </gresource>
+</gresources>

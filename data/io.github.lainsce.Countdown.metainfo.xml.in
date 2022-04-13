@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop">
+    <id>io.github.lainsce.Countdown</id>
+    <metadata_license>CC0-1.0</metadata_license>
+    <project_license>GPL-3.0+</project_license>
+    <name translatable="no">Countdown</name>
+    <summary>Track events until they happen or since they happened</summary>
+    <description>
+        <p>Tracking events until they happen, or since they happened, easier.</p>
+    </description>
+    <provides>
+        <binary>io.github.lainsce.Countdown</binary>
+    </provides>
+    <kudos>
+      <kudo>ModernToolkit</kudo>
+      <kudo>HiDpiIcon</kudo>
+    </kudos>
+    <developer_name translatable="no">Lains</developer_name>
+    <url type="homepage">https://github.com/lainsce/Countdown/</url>
+    <url type="bugtracker">https://github.com/lainsce/Countdown/issues</url>
+    <url type="donation">https://www.ko-fi.com/lainsce/</url>
+    <url type="translate">https://github.com/lainsce/Countdown/blob/master/po/README.md</url>
+    <screenshots>
+        <screenshot type="default">
+            <image>https://raw.githubusercontent.com/lainsce/Countdown/master/data/shot.png</image>
+        </screenshot>
+    </screenshots>
+    <content_rating type="oars-1.1" />
+    <recommends>
+      <control>keyboard</control>
+      <control>pointing</control>
+      <control>touch</control>
+    </recommends>
+    <requires>
+      <display_length compare="ge">360</display_length>
+    </requires>
+    <custom>
+      <value key="GnomeSoftware::key-colors">[(196, 165, 244)]</value>
+    </custom>
+    <translation type="gettext">io.github.lainsce.Countdown</translation>
+    <releases>
+        <release version="1.0.0" date="2021-10-26">
+            <description>
+                <p>Release: First Release</p>
+            </description>
+        </release>
+    </releases>
+</component>

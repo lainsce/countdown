@@ -1,0 +1,13 @@
+data/io.github.lainsce.Countdown.desktop.in
+data/io.github.lainsce.Countdown.metainfo.xml.in
+data/io.github.lainsce.Countdown.gschema.xml
+
+data/ui/keys.ui
+data/ui/menu.ui
+data/ui/window.ui
+
+src/main.vala
+src/window.vala
+src/colorbutton.vala
+src/chooser.vala
+src/hue_slider.vala

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+<template class="CountdownEventRowContent" parent="AdwBin">
+  <property name="child">
+    <object class="AdwActionRow">
+      <child type="prefix">
+        <object class="GtkLabel">
+          <property name="halign">start</property>
+          <property name="ellipsize">end</property>
+          <property name="single-line-mode">yes</property>
+          <binding name="label">
+            <lookup name="title" type="CountdownEvent">
+              <lookup name="event">CountdownEventRowContent</lookup>
+            </lookup>
+          </binding>
+          <style>
+            <class name="title-4"/>
+          </style>
+        </object>
+      </child>
+      <child type="suffix">
+        <object class="GtkLabel">
+          <property name="halign">start</property>
+          <property name="ellipsize">end</property>
+          <property name="justify">center</property>
+          <binding name="label">
+            <closure type="gchararray" function="get_date_line">
+              <lookup name="date" type="CountdownEvent">
+                <lookup name="event">CountdownEventRowContent</lookup>
+              </lookup>
+            </closure>
+          </binding>
+          <style>
+            <class name="title-4"/>
+          </style>
+        </object>
+      </child>
+    </object>
+  </property>
+</template>
+</interface>

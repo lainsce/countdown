@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=Countdown
+Exec=io.github.lainsce.Countdown
+Icon=@icon@
+Keywords=color;palette;library;hue;swatch;
+Terminal=false
+Type=Application
+StartupNotify=true
+Categories=GTK;Utility;

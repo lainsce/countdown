@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+  <template class="CountdownWidgetsDialog" parent="AdwWindow">
+    <property name="default-width">360</property>
+    <property name="default-height">180</property>
+    <property name="resizable">0</property>
+    <property name="modal">1</property>
+    <property name="default-widget">new_button</property>
+    <child>
+      <object class="GtkBox" id="main_box">
+        <property name="orientation">vertical</property>
+        <child>
+          <object class="AdwHeaderBar">
+            <property name="show-start-title-buttons">0</property>
+            <property name="show-end-title-buttons">0</property>
+            <child type="end">
+              <object class="GtkButton" id="new_button">
+                <property name="label" translatable="yes">Add Event</property>
+                <property name="sensitive">0</property>
+                <signal name="clicked" handler="on_new_event_requested" />
+                <style>
+                  <class name="suggested-action"/>
+                </style>
+              </object>
+            </child>
+            <child type="title">
+              <object class="GtkLabel">
+                <property name="label" translatable="yes">New Event</property>
+                <property name="valign">center</property>
+                <style>
+                  <class name="title"/>
+                </style>
+              </object>
+            </child>
+            <child>
+              <object class="GtkButton" id="cancel_button">
+                <property name="label" translatable="yes">Cancel</property>
+                <signal name="clicked" handler="on_cancel_requested" />
+              </object>
+            </child>
+          </object>
+        </child>
+        <child>
+          <object class="AdwPreferencesGroup">
+            <property name="vexpand">1</property>
+            <property name="margin-top">12</property>
+            <property name="margin-bottom">12</property>
+            <property name="margin-start">12</property>
+            <property name="margin-end">12</property>
+            <child>
+              <object class="AdwActionRow">
+                <property name="title" translatable="yes">Event Name</property>
+                <child type="suffix">
+                  <object class="GtkEntry" id="event_name_entry">
+                    <property name="valign">center</property>
+                  </object>
+                </child>
+              </object>
+            </child>
+            <child>
+              <object class="AdwActionRow">
+                <property name="title" translatable="yes">Event Date</property>
+                <property name="subtitle" translatable="yes">Formatted as DD/MM/YYYY</property>
+                <child type="suffix">
+                  <object class="GtkEntry" id="event_date_entry">
+                    <property name="valign">center</property>
+                    <property name="max_width_chars">10</property>
+                  </object>
+                </child>
+              </object>
+            </child>
+          </object>
+        </child>
+      </object>
+    </child>
+  </template>
+</interface>
