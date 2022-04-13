@@ -34,7 +34,6 @@ public class Countdown.EventRowContent : Adw.Bin {
             _event = value;
 
             delete_button.clicked.connect (() => {
-                print ("Deleted event!\n");
                 if (_event.passed == true) {
                     var dialog = new Gtk.MessageDialog (((MainWindow)MiscUtils.find_ancestor_of_type<MainWindow>(this)), 0, 0, 0, null);
                     dialog.modal = true;
