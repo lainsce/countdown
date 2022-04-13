@@ -35,11 +35,11 @@
       <display_length compare="ge">360</display_length>
     </requires>
     <custom>
-      <value key="GnomeSoftware::key-colors">[(196, 165, 244)]</value>
+      <value key="GnomeSoftware::key-colors">[(196, 165, 44)]</value>
     </custom>
     <translation type="gettext">io.github.lainsce.Countdown</translation>
     <releases>
-        <release version="1.0.0" date="2021-10-26">
+        <release version="1.0.0" date="2022-04-15">
             <description>
                 <p>Release: First Release</p>
             </description>
