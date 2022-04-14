@@ -14,9 +14,6 @@
           <child>
             <object class="GtkButton" id="delete_button">
               <property name="icon-name">user-trash-symbolic</property>
-              <style>
-                <class name="title-4"/>
-              </style>
             </object>
           </child>
           <child>

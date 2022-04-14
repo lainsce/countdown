@@ -41,15 +41,6 @@
   border-radius: 8px;
 }
 
-.event-list row {
-  background: @window_bg_color;
-  margin-bottom: 4px;
-}
-.event-list .event-row {
-  background: none;
-  padding: 8px 0;
-  margin-bottom: 0px;
-}
 .event-row button {
   background: none;
   color: #ba1b1b;
@@ -60,27 +51,37 @@
   color: #fff;
 }
 
+.event-list {
+  margin: 0;
+  padding: 0;
+}
+.event-list .event-row {
+  background: none;
+  padding: 8px 0;
+  margin-bottom: 0px;
+}
+.event-list row {
+  background: @window_bg_color;
+  margin-bottom: 4px;
+  border-radius: 8px;
+  padding: 0 8px 0 0;
+}
 .event-list row:hover {
   background: shade(@window_bg_color, 0.95);
 }
-
 .event-list row:active {
   background: shade(@window_bg_color, 0.92);
 }
-
-.event-list:not(:first-child):not(:last-child) {
-  border-radius: 4px;
-}
-
-.event-list:first-child {
-  border-radius: 8px 8px 4px 4px;
-}
-
-.event-list:last-child {
-  border-radius: 4px 4px 8px 8px;
+.event-list row {
+  border-radius: 8px;
 }
 
 .dialog-event list {
   background: @view_bg_color;
   box-shadow: none;
+}
+
+.event-title {
+  font-size: 1.5rem;
+  font-weight: 400;
 }
