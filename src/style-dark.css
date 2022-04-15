@@ -1,22 +1,17 @@
 @define-color accent_color #ffba4b;
 @define-color accent_bg_color #ba5e1a;
 @define-color accent_fg_color #ffdbc6;
-@define-color window_bg_color #1f1b16;
-@define-color view_bg_color #34302a;
-@define-color headerbar_bg_color #1f1b16;
-@define-color popover_bg_color #34302a;
-@define-color popover_fg_color #eae1d9;
-@define-color window_fg_color #eae1d9;
-@define-color view_fg_color #eae1d9;
-@define-color headerbar_fg_color #eae1d9;
-@define-color borders alpha(#9b8f80, 0.5);
+@define-color window_bg_color #111;
+@define-color headerbar_bg_color #111;
+
+.main-box {
+  background: linear-gradient(135deg, @window_bg_color, #170900);
+}
 
 .event-row button {
   background: none;
-  color: #ffb4a9;
   margin: 0;
 }
 .event-row button:hover {
-  background: #ffb4a9;
-  color: #680003;
+  color: #ffb4a9;
 }

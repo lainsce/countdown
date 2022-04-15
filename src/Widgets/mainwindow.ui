@@ -4,9 +4,13 @@
     <property name="default-width">360</property>
     <property name="default-height">500</property>
     <property name="title">Countdown</property>
+    <style>
+      <class name="main-box"/>
+    </style>
     <child>
       <object class="GtkBox" id="main_box">
         <property name="orientation">vertical</property>
+        <property name="spacing">6</property>
         <child>
           <object class="AdwHeaderBar" id="headerbar">
             <style>
@@ -22,64 +26,83 @@
         </child>
         <child>
           <object class="GtkBox">
-            <property name="margin-bottom">6</property>
-            <property name="margin-start">6</property>
-            <property name="margin-end">6</property>
-            <style>
-              <class name="main-box"/>
-            </style>
+            <property name="margin-start">18</property>
+            <property name="margin-end">18</property>
+            <property name="spacing">12</property>
             <child>
-              <object class="GtkOverlay">
+              <object class="GtkToggleButton" id="upcoming_button">
+                <property name="label" translatable="yes">Upcoming</property>
+                <property name="active">1</property>
+                <signal name="toggled" handler="on_upcoming_stack_requested"/>
+                <style>
+                  <class name="flat"/>
+                  <class name="stack-button"/>
+                </style>
+              </object>
+            </child>
+            <child>
+              <object class="GtkToggleButton" id="past_button">
+                <property name="label" translatable="yes">Past</property>
+                <property name="group">upcoming_button</property>
+                <signal name="toggled" handler="on_past_stack_requested"/>
+                <style>
+                  <class name="flat"/>
+                  <class name="stack-button"/>
+                </style>
+              </object>
+            </child>
+          </object>
+        </child>
+        <child>
+          <object class="GtkSearchEntry" id="event_searchbar">
+            <property name="margin-start">18</property>
+            <property name="margin-end">18</property>
+            <property name="margin-bottom">6</property>
+            <property name="placeholder-text" translatable="yes">• events</property>
+            <style>
+              <class name="search-bar"/>
+            </style>
+          </object>
+        </child>
+        <child>
+          <object class="GtkOverlay">
+            <child>
+              <object class="GtkStack" id="event_stack">
                 <child>
-                  <object class="GtkScrolledWindow">
-                    <property name="vexpand">1</property>
-                    <property name="margin-top">12</property>
-                    <property name="margin-bottom">12</property>
-                    <property name="margin-start">12</property>
-                    <property name="margin-end">12</property>
-                    <child>
-                      <object class="AdwClamp">
+                  <object class="GtkStackPage">
+                    <property name="name">upcoming</property>
+                    <property name="title">Upcoming</property>
+                    <property name="child">
+                      <object class="GtkScrolledWindow">
+                        <property name="vexpand">1</property>
+                        <property name="margin-top">12</property>
+                        <property name="margin-bottom">12</property>
+                        <property name="margin-start">12</property>
+                        <property name="margin-end">12</property>
                         <child>
-                          <object class="GtkBox">
-                            <property name="orientation">vertical</property>
-                            <property name="spacing">6</property>
+                          <object class="AdwClamp">
                             <child>
-                              <object class="AdwPreferencesGroup">
-                                <property name="title">Upcoming</property>
+                              <object class="GtkBox">
+                                <property name="orientation">vertical</property>
+                                <property name="spacing">6</property>
                                 <child>
-                                  <object class="CountdownUpcomingListView" id="listview">
+                                  <object class="AdwPreferencesGroup">
                                     <property name="vexpand">1</property>
-                                    <signal name="new_event_requested" handler="on_new_event_requested"/>
-                                    <signal name="event_update_requested" handler="on_event_update_requested" />
-                                    <binding name="events">
-                                      <lookup name="events" type="CountdownEventViewModel">
-                                        <lookup name="view-model">CountdownMainWindow</lookup>
-                                      </lookup>
-                                    </binding>
-                                    <binding name="view-model">
-                                      <lookup name="view-model">CountdownMainWindow</lookup>
-                                    </binding>
-                                  </object>
-                                </child>
-                              </object>
-                            </child>
-                            <child>
-                              <object class="AdwPreferencesGroup">
-                                <property name="title">Past</property>
-                                <property name="vexpand">1</property>
-                                <child>
-                                  <object class="CountdownPastListView" id="plistview">
-                                    <property name="vexpand">1</property>
-                                    <signal name="past_event_requested" handler="on_past_event_requested"/>
-                                    <signal name="past_event_update_requested" handler="on_past_event_update_requested" />
-                                    <binding name="events">
-                                      <lookup name="events" type="CountdownPastEventViewModel">
-                                        <lookup name="past-view-model">CountdownMainWindow</lookup>
-                                      </lookup>
-                                    </binding>
-                                    <binding name="past-view-model">
-                                      <lookup name="past-view-model">CountdownMainWindow</lookup>
-                                    </binding>
+                                    <child>
+                                      <object class="CountdownUpcomingListView" id="listview">
+                                        <property name="vexpand">1</property>
+                                        <signal name="new_event_requested" handler="on_new_event_requested"/>
+                                        <signal name="event_update_requested" handler="on_event_update_requested" />
+                                        <binding name="events">
+                                          <lookup name="events" type="CountdownEventViewModel">
+                                            <lookup name="view-model">CountdownMainWindow</lookup>
+                                          </lookup>
+                                        </binding>
+                                        <binding name="view-model">
+                                          <lookup name="view-model">CountdownMainWindow</lookup>
+                                        </binding>
+                                      </object>
+                                    </child>
                                   </object>
                                 </child>
                               </object>
@@ -87,25 +110,70 @@
                           </object>
                         </child>
                       </object>
-                    </child>
+                    </property>
                   </object>
                 </child>
-                <child type="overlay">
-                  <object class="GtkButton" id="gnew_button">
-                    <property name="tooltip-text" translatable="yes">Add Event…</property>
-                    <property name="icon-name">appointment-new-symbolic</property>
-                    <property name="action-name">win.action_new_event</property>
-                    <property name="valign">end</property>
-                    <property name="halign">end</property>
-                    <property name="margin-end">12</property>
-                    <property name="margin-bottom">12</property>
-                    <style>
-                      <class name="list-action-button"/>
-                      <class name="accent-button"/>
-                      <class name="opaque"/>
-                    </style>
+                <child>
+                  <object class="GtkStackPage">
+                    <property name="name">past</property>
+                    <property name="title">Past</property>
+                    <property name="child">
+                      <object class="GtkScrolledWindow">
+                        <property name="vexpand">1</property>
+                        <property name="margin-top">12</property>
+                        <property name="margin-bottom">12</property>
+                        <property name="margin-start">12</property>
+                        <property name="margin-end">12</property>
+                        <child>
+                          <object class="AdwClamp">
+                            <child>
+                              <object class="GtkBox">
+                                <property name="orientation">vertical</property>
+                                <property name="spacing">6</property>
+                                <child>
+                                  <object class="AdwPreferencesGroup">
+                                    <property name="vexpand">1</property>
+                                    <child>
+                                      <object class="CountdownPastListView" id="plistview">
+                                        <property name="vexpand">1</property>
+                                        <signal name="past_event_requested" handler="on_past_event_requested"/>
+                                        <signal name="past_event_update_requested" handler="on_past_event_update_requested" />
+                                        <binding name="events">
+                                          <lookup name="events" type="CountdownPastEventViewModel">
+                                            <lookup name="past-view-model">CountdownMainWindow</lookup>
+                                          </lookup>
+                                        </binding>
+                                        <binding name="past-view-model">
+                                          <lookup name="past-view-model">CountdownMainWindow</lookup>
+                                        </binding>
+                                      </object>
+                                    </child>
+                                  </object>
+                                </child>
+                              </object>
+                            </child>
+                          </object>
+                        </child>
+                      </object>
+                    </property>
                   </object>
                 </child>
+              </object>
+            </child>
+            <child type="overlay">
+              <object class="GtkButton" id="new_button">
+                <property name="tooltip-text" translatable="yes">Add Event…</property>
+                <property name="icon-name">appointment-new-symbolic</property>
+                <property name="action-name">win.action_new_event</property>
+                <property name="valign">end</property>
+                <property name="halign">end</property>
+                <property name="margin-end">18</property>
+                <property name="margin-bottom">18</property>
+                <style>
+                  <class name="list-action-button"/>
+                  <class name="accent-button"/>
+                  <class name="opaque"/>
+                </style>
               </object>
             </child>
           </object>

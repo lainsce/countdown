@@ -20,6 +20,10 @@ namespace Countdown {
 	public class MainWindow : Adw.ApplicationWindow {
 	    [GtkChild]
 	    unowned Gtk.MenuButton menu_button;
+	    [GtkChild]
+	    unowned Gtk.Stack event_stack;
+	    [GtkChild]
+	    unowned Gtk.SearchEntry event_searchbar;
 
 	    public EventViewModel view_model { get; construct; }
 	    public PastEventViewModel past_view_model { get; construct; }
@@ -74,6 +78,13 @@ namespace Countdown {
                 add_css_class ("devel");
             }
 
+            // The stack will be on Upcoming by default, so update number of events of there on opening.
+            Timeout.add_seconds(1, () => {
+                uint num = view_model.events.get_n_items ();
+                event_searchbar.placeholder_text = num.to_string() + " " + (_("events"));
+                return false;
+            });
+
             this.set_size_request (360, 360);
 			this.show ();
 		}
@@ -97,6 +108,20 @@ namespace Countdown {
         [GtkCallback]
         public void on_past_event_update_requested (Event event) {
             past_view_model.update_event (event);
+        }
+
+        [GtkCallback]
+        void on_upcoming_stack_requested () {
+            event_stack.set_visible_child_name ("upcoming");
+            uint num = view_model.events.get_n_items ();
+            event_searchbar.placeholder_text = num.to_string() + " " + (_("events"));
+        }
+
+        [GtkCallback]
+        void on_past_stack_requested () {
+            event_stack.set_visible_child_name ("past");
+            uint num = past_view_model.events.get_n_items ();
+            event_searchbar.placeholder_text = num.to_string() + " " + (_("events"));
         }
 
         public void action_new_event () {
