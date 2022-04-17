@@ -74,10 +74,6 @@ namespace Countdown {
             var builder = new Gtk.Builder.from_resource ("/io/github/lainsce/Countdown/menu.ui");
             menu_button.menu_model = (MenuModel)builder.get_object ("menu");
 
-            if (Config.DEVELOPMENT) {
-                add_css_class ("devel");
-            }
-
             // The stack will be on Upcoming by default, so update number of events of there on opening.
             Timeout.add_seconds(1, () => {
                 uint num = view_model.events.get_n_items ();

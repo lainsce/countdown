@@ -4,10 +4,6 @@
 @define-color window_bg_color #111;
 @define-color headerbar_bg_color #111;
 
-.main-box {
-  background: linear-gradient(135deg, @window_bg_color, #170900);
-}
-
 .event-row button {
   background: none;
   margin: 0;
