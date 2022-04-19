@@ -4,18 +4,21 @@
     <property name="default-width">360</property>
     <property name="default-height">500</property>
     <property name="title">Countdown</property>
-    <style>
-      <class name="main-box"/>
-    </style>
     <child>
       <object class="GtkBox" id="main_box">
         <property name="orientation">vertical</property>
         <property name="spacing">6</property>
+        <style>
+          <class name="main-box"/>
+        </style>
         <child>
           <object class="AdwHeaderBar" id="headerbar">
             <style>
               <class name="flat"/>
             </style>
+            <child type="title">
+              <object class="GtkBox" />
+            </child>
             <child type="end">
               <object class="GtkMenuButton" id="menu_button">
                 <property name="direction">none</property>

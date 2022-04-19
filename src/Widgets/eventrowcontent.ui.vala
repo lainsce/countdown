@@ -83,7 +83,7 @@ public class Countdown.EventRowContent : Adw.Bin {
                     dialog.response.connect ((response_id) => {
                         switch (response_id) {
                             case Gtk.ResponseType.OK:
-                                ((MainWindow)MiscUtils.find_ancestor_of_type<MainWindow>(this)).view_model.delete_event (_event);;
+                                ((MainWindow)MiscUtils.find_ancestor_of_type<MainWindow>(this)).view_model.delete_event (_event);
                                 dialog.close ();
                                 break;
                             case Gtk.ResponseType.NO:
@@ -116,7 +116,7 @@ public class Countdown.EventRowContent : Adw.Bin {
     }
 
     construct {
-        Timeout.add_seconds (86399, () => {
+        Timeout.add_seconds (60, () => {
             update_date_line (event.date);
         });
     }
@@ -148,6 +148,13 @@ public class Countdown.EventRowContent : Adw.Bin {
             warning ("%s".printf(re.message));
         }
         
+        if (int.parse(res) == 0 && event.passed != true) {
+            event.passed = true;
+            res = "-1";
+            ((MainWindow)MiscUtils.find_ancestor_of_type<MainWindow>(this)).past_view_model.create_new_event (event);
+            ((MainWindow)MiscUtils.find_ancestor_of_type<MainWindow>(this)).view_model.delete_event (event);
+        }
+
         if (int.parse(res) < 0) {
             return (int.parse(res) * -1).to_string();
         } else {

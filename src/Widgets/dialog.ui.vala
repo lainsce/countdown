@@ -60,7 +60,7 @@ namespace Countdown {
                 warning ("%s".printf(re.message));
             }
             
-            if (res < 0) {
+            if (res <= 0) {
                 event.passed = true;
                 pvm.create_new_event (event);
             } else {

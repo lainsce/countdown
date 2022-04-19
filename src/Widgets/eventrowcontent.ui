@@ -26,7 +26,7 @@
                 </lookup>
               </binding>
               <style>
-                <class name="title-4"/>
+                <class name="event-title"/>
               </style>
             </object>
           </child>

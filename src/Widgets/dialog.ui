@@ -55,6 +55,7 @@
             <child>
               <object class="AdwActionRow">
                 <property name="title" translatable="yes">Event Name</property>
+                <property name="focusable">0</property>
                 <child type="suffix">
                   <object class="GtkEntry" id="event_name_entry">
                     <property name="valign">center</property>
@@ -65,6 +66,7 @@
             <child>
               <object class="AdwActionRow">
                 <property name="title" translatable="yes">Event Date</property>
+                <property name="focusable">0</property>
                 <child type="suffix">
                   <object class="GtkBox">
                     <property name="orientation">horizontal</property>
@@ -98,6 +100,7 @@
                         <property name="valign">center</property>
                         <property name="max_width_chars">4</property>
                         <property name="placeholder_text">YYYY</property>
+                        <property name="activates-default">1</property>
                       </object>
                     </child>
                   </object>
