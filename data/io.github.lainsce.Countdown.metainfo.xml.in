@@ -39,7 +39,7 @@
     </custom>
     <translation type="gettext">io.github.lainsce.Countdown</translation>
     <releases>
-        <release version="1.0.0" date="2022-04-15">
+        <release version="1.0.0" date="2022-04-20">
             <description>
                 <p>Release: First Release</p>
             </description>
