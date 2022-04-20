@@ -1,7 +1,7 @@
 [Desktop Entry]
 Name=Countdown
 Exec=io.github.lainsce.Countdown
-Icon=@icon@
+Icon=@app_id@
 Keywords=event;countdown;days;
 Terminal=false
 Type=Application
