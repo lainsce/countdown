@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.github.lainsce.Countdown\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-11-05 19:44-0300\n"
+"POT-Creation-Date: 2022-06-15 22:50+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,123 +18,129 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: data/io.github.lainsce.Countdown.desktop.in:3
-#: data/io.github.lainsce.Countdown.appdata.xml.in:6 src/window.vala:570
+#: data/io.github.lainsce.Countdown.metainfo.xml.in:6
 msgid "Countdown"
 msgstr ""
 
 #: data/io.github.lainsce.Countdown.desktop.in:6
-msgid "color;palette;library;hue;swatch;"
+msgid "event;countdown;days;"
 msgstr ""
 
-#: data/io.github.lainsce.Countdown.appdata.xml.in:7
-msgid "Generate color pairings"
+#: data/io.github.lainsce.Countdown.metainfo.xml.in:7
+msgid "Track events until they happen or since they happened"
 msgstr ""
 
-#: data/io.github.lainsce.Countdown.appdata.xml.in:9
-msgid ""
-"Generate color pairings from selected color that follow certain color rules."
+#: data/io.github.lainsce.Countdown.metainfo.xml.in:9
+msgid "Tracking events until they happen, or since they happened, easier."
 msgstr ""
 
-#: data/io.github.lainsce.Countdown.appdata.xml.in:18
+#: data/io.github.lainsce.Countdown.metainfo.xml.in:19
 msgid "Lains"
 msgstr ""
 
-#: data/io.github.lainsce.Countdown.appdata.xml.in:44
-msgid "Release: Recoloring With Accent"
-msgstr ""
-
-#: data/io.github.lainsce.Countdown.appdata.xml.in:45
-msgid "Changed: The UI now uses libadwaita recoloring."
-msgstr ""
-
-#: data/io.github.lainsce.Countdown.appdata.xml.in:46
-msgid "Changed: New UI layout."
-msgstr ""
-
-#: data/io.github.lainsce.Countdown.appdata.xml.in:51
-msgid "Release: Color Choosing with a Drag"
-msgstr ""
-
-#: data/io.github.lainsce.Countdown.appdata.xml.in:52
-msgid ""
-"Added: The color chooser box's pointer can now be dragged to choose the "
-"color as well, no more clicking random spots."
-msgstr ""
-
-#: data/io.github.lainsce.Countdown.appdata.xml.in:53
-msgid ""
-"Changed: Most icons now above color content are aware of contrast and will "
-"update accordingly as white or black colored to ensure contrast."
-msgstr ""
-
-#: data/io.github.lainsce.Countdown.appdata.xml.in:58
-msgid "Release: Copiable Colors"
-msgstr ""
-
-#: data/io.github.lainsce.Countdown.appdata.xml.in:59
-msgid ""
-"Added: Now the color boxes are now buttons which you can copy the individual "
-"color."
-msgstr ""
-
-#: data/io.github.lainsce.Countdown.appdata.xml.in:64
+#: data/io.github.lainsce.Countdown.metainfo.xml.in:45
 msgid "Release: First Release"
 msgstr ""
 
-#: data/ui/keys.ui:12
+#: src/Widgets/keys.ui:12
 msgctxt "shortcut window"
 msgid "General"
 msgstr ""
 
-#: data/ui/keys.ui:16
+#: src/Widgets/keys.ui:16
 msgctxt "shortcut window"
 msgid "Quit"
 msgstr ""
 
-#: data/ui/menu.ui:7
-msgid "Export Colors as Image…"
+#: src/Widgets/keys.ui:22
+msgctxt "shortcut window"
+msgid "New Event"
 msgstr ""
 
-#: data/ui/menu.ui:13
+#: src/Widgets/menu.ui:7
 msgid "Keyboard Shortcuts"
 msgstr ""
 
-#: data/ui/menu.ui:17
+#: src/Widgets/menu.ui:11
 msgid "About Countdown"
 msgstr ""
 
-#: data/ui/window.ui:99
-msgid "Pick Color"
+#: src/Widgets/mainwindow.ui:37
+msgid "Upcoming"
 msgstr ""
 
-#: src/window.vala:101
-msgid "Analogous"
+#: src/Widgets/mainwindow.ui:48
+msgid "Past"
 msgstr ""
 
-#: src/window.vala:102
-msgid "Complementary"
+#: src/Widgets/mainwindow.ui:64
+msgid "• events"
 msgstr ""
 
-#: src/window.vala:103
-msgid "Triadic"
+#: src/Widgets/mainwindow.ui:168
+msgid "Add Event…"
 msgstr ""
 
-#: src/window.vala:104
-msgid "Tetradic"
+#: src/Widgets/dialog.ui:24
+msgid "Add Event"
 msgstr ""
 
-#: src/window.vala:105
-msgid "Monochromatic"
+#: src/Widgets/dialog.ui:34
+msgid "New Event"
 msgstr ""
 
-#: src/window.vala:541
-msgid "Colors exported to clipboard."
+#: src/Widgets/dialog.ui:43 src/Widgets/eventrowcontent.ui.vala:44
+#: src/Widgets/eventrowcontent.ui.vala:79
+msgid "Cancel"
 msgstr ""
 
-#: src/window.vala:575
-msgid "Generate color pairings."
+#: src/Widgets/dialog.ui:57
+msgid "Event Name"
 msgstr ""
 
-#: src/window.vala:581
+#: src/Widgets/dialog.ui:68
+msgid "Event Date"
+msgstr ""
+
+#: src/Widgets/eventrowcontent.ui:65
+msgid "days"
+msgstr ""
+
+#: src/Widgets/mainwindow.ui.vala:80 src/Widgets/mainwindow.ui.vala:113
+#: src/Widgets/mainwindow.ui.vala:120
+msgid "events"
+msgstr ""
+
+#: src/Widgets/mainwindow.ui.vala:154
+msgid "Track events until they happen or since they happened."
+msgstr ""
+
+#. TRANSLATORS: 'Name <email@domain.com>' or 'Name https://website.example'
+#: src/Widgets/mainwindow.ui.vala:161
 msgid "translator-credits"
+msgstr ""
+
+#: src/Widgets/eventrowcontent.ui.vala:41
+msgid "Delete Past Event?"
+msgstr ""
+
+#: src/Widgets/eventrowcontent.ui.vala:42
+msgid ""
+"Deleting this past event will not save it in the past log and will stop "
+"tracking the days since the event happened."
+msgstr ""
+
+#: src/Widgets/eventrowcontent.ui.vala:45
+#: src/Widgets/eventrowcontent.ui.vala:80
+msgid "Delete"
+msgstr ""
+
+#: src/Widgets/eventrowcontent.ui.vala:76
+msgid "Delete Upcoming Event?"
+msgstr ""
+
+#: src/Widgets/eventrowcontent.ui.vala:77
+msgid ""
+"Deleting this upcoming event will not save it in the upcoming log and will "
+"stop tracking the days until the event happens."
 msgstr ""
