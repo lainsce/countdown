@@ -1,0 +1,155 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the io.github.lainsce.Countdown package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: io.github.lainsce.Countdown\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-06-15 22:50+0200\n"
+"PO-Revision-Date: 2022-06-15 23:09+0200\n"
+"Last-Translator: Philip Goto <philip.goto@gmail.com>\n"
+"Language-Team: \n"
+"Language: nl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.1\n"
+
+#: data/io.github.lainsce.Countdown.desktop.in:3
+#: data/io.github.lainsce.Countdown.metainfo.xml.in:6
+msgid "Countdown"
+msgstr "Countdown"
+
+#: data/io.github.lainsce.Countdown.desktop.in:6
+msgid "event;countdown;days;"
+msgstr "event;gebeurtenis;countdown;aftel;days;dagen;"
+
+#: data/io.github.lainsce.Countdown.metainfo.xml.in:7
+msgid "Track events until they happen or since they happened"
+msgstr "Volg gebeurtenissen tot ze gebeuren of sinds ze gebeurd zijn"
+
+#: data/io.github.lainsce.Countdown.metainfo.xml.in:9
+msgid "Tracking events until they happen, or since they happened, easier."
+msgstr ""
+"Gebeurtenissen makkelijker volgen tot ze gebeuren, of sinds ze gebeurd "
+"zijn."
+
+#: data/io.github.lainsce.Countdown.metainfo.xml.in:19
+msgid "Lains"
+msgstr "Lains"
+
+#: data/io.github.lainsce.Countdown.metainfo.xml.in:45
+msgid "Release: First Release"
+msgstr "Uitgave: Eerste uitgave"
+
+#: src/Widgets/keys.ui:12
+msgctxt "shortcut window"
+msgid "General"
+msgstr "Algemeen"
+
+#: src/Widgets/keys.ui:16
+msgctxt "shortcut window"
+msgid "Quit"
+msgstr "Sluiten"
+
+#: src/Widgets/keys.ui:22
+msgctxt "shortcut window"
+msgid "New Event"
+msgstr "Nieuwe gebeurtenis"
+
+#: src/Widgets/menu.ui:7
+msgid "Keyboard Shortcuts"
+msgstr "Sneltoetsen"
+
+#: src/Widgets/menu.ui:11
+msgid "About Countdown"
+msgstr "Over Countdown"
+
+#: src/Widgets/mainwindow.ui:37
+msgid "Upcoming"
+msgstr "Aankomend"
+
+#: src/Widgets/mainwindow.ui:48
+msgid "Past"
+msgstr "Afgelopen"
+
+#: src/Widgets/mainwindow.ui:64
+msgid "• events"
+msgstr "• gebeurtenissen"
+
+#: src/Widgets/mainwindow.ui:168
+msgid "Add Event…"
+msgstr "Gebeurtenis toevoegen…"
+
+#: src/Widgets/dialog.ui:24
+msgid "Add Event"
+msgstr "Gebeurtenis toevoegen"
+
+#: src/Widgets/dialog.ui:34
+msgid "New Event"
+msgstr "Nieuwe gebeurtenis"
+
+#: src/Widgets/dialog.ui:43 src/Widgets/eventrowcontent.ui.vala:44
+#: src/Widgets/eventrowcontent.ui.vala:79
+msgid "Cancel"
+msgstr "Annuleren"
+
+#: src/Widgets/dialog.ui:57
+msgid "Event Name"
+msgstr "Naam van gebeurtenis"
+
+#: src/Widgets/dialog.ui:68
+msgid "Event Date"
+msgstr "Datum van gebeurtenis"
+
+#: src/Widgets/eventrowcontent.ui:65
+msgid "days"
+msgstr "dagen"
+
+#: src/Widgets/mainwindow.ui.vala:80 src/Widgets/mainwindow.ui.vala:113
+#: src/Widgets/mainwindow.ui.vala:120
+msgid "events"
+msgstr "gebeurtenissen"
+
+#: src/Widgets/mainwindow.ui.vala:154
+msgid "Track events until they happen or since they happened."
+msgstr "Volg gebeurtenissen tot ze gebeuren, of sinds ze gebeurd zijn."
+
+#. TRANSLATORS: 'Name <email@domain.com>' or 'Name https://website.example'
+#: src/Widgets/mainwindow.ui.vala:161
+msgid "translator-credits"
+msgstr "Philip Goto"
+
+#: src/Widgets/eventrowcontent.ui.vala:41
+msgid "Delete Past Event?"
+msgstr "Afgelopen gebeurtenis verwijderen?"
+
+#: src/Widgets/eventrowcontent.ui.vala:42
+msgid ""
+"Deleting this past event will not save it in the past log and will stop "
+"tracking the days since the event happened."
+msgstr ""
+"Door deze afgelopen gebeurtenis te verwijderen zal deze niet in de "
+"logboeken worden opgeslagen, en zal het aantal dagen sinds deze "
+"gebeurtenis niet meer worden bijgehouden."
+
+#: src/Widgets/eventrowcontent.ui.vala:45
+#: src/Widgets/eventrowcontent.ui.vala:80
+msgid "Delete"
+msgstr "Verwijderen"
+
+#: src/Widgets/eventrowcontent.ui.vala:76
+msgid "Delete Upcoming Event?"
+msgstr "Aankomende gebeurtenis verwijderen?"
+
+#: src/Widgets/eventrowcontent.ui.vala:77
+msgid ""
+"Deleting this upcoming event will not save it in the upcoming log and will "
+"stop tracking the days until the event happens."
+msgstr ""
+"Door deze aankomende gebeurtenis te verwijderen zal deze niet in de "
+"logboeken worden opgeslagen, en zal het aantal dagen tot deze gebeurtenis "
+"niet meer worden bijgehouden."
