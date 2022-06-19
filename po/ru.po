@@ -1,0 +1,150 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the io.github.lainsce.Countdown package.
+# David Lapshin <ddaudix@gmail.com>, 2022.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: io.github.lainsce.Countdown\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-06-15 22:50+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: David Lapshin <ddaudix@gmail.com>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: data/io.github.lainsce.Countdown.desktop.in:3
+#: data/io.github.lainsce.Countdown.metainfo.xml.in:6
+msgid "Countdown"
+msgstr "Countdown"
+
+#: data/io.github.lainsce.Countdown.desktop.in:6
+msgid "event;countdown;days;"
+msgstr "событие;обратный отсчет;дни;"
+
+#: data/io.github.lainsce.Countdown.metainfo.xml.in:7
+msgid "Track events until they happen or since they happened"
+msgstr "Отслеживайте события, пока они не произошли или с тех пор, как они произошли"
+
+#: data/io.github.lainsce.Countdown.metainfo.xml.in:9
+msgid "Tracking events until they happen, or since they happened, easier."
+msgstr "Отслеживание событий, пока они не произошли или с тех пор, как они произошли, проще."
+
+#: data/io.github.lainsce.Countdown.metainfo.xml.in:19
+msgid "Lains"
+msgstr "Lains"
+
+#: data/io.github.lainsce.Countdown.metainfo.xml.in:45
+msgid "Release: First Release"
+msgstr "Выпуск: Первый выпуск"
+
+#: src/Widgets/keys.ui:12
+msgctxt "shortcut window"
+msgid "General"
+msgstr "Общее"
+
+#: src/Widgets/keys.ui:16
+msgctxt "shortcut window"
+msgid "Quit"
+msgstr "Выйти"
+
+#: src/Widgets/keys.ui:22
+msgctxt "shortcut window"
+msgid "New Event"
+msgstr "Новое событие"
+
+#: src/Widgets/menu.ui:7
+msgid "Keyboard Shortcuts"
+msgstr "Комбинации клавиш"
+
+#: src/Widgets/menu.ui:11
+msgid "About Countdown"
+msgstr "О Countdown"
+
+#: src/Widgets/mainwindow.ui:37
+msgid "Upcoming"
+msgstr "Предстоящие"
+
+#: src/Widgets/mainwindow.ui:48
+msgid "Past"
+msgstr "Прошедшие"
+
+#: src/Widgets/mainwindow.ui:64
+msgid "• events"
+msgstr "• событий"
+
+#: src/Widgets/mainwindow.ui:168
+msgid "Add Event…"
+msgstr "Добавить событие…"
+
+#: src/Widgets/dialog.ui:24
+msgid "Add Event"
+msgstr "Добавить событие"
+
+#: src/Widgets/dialog.ui:34
+msgid "New Event"
+msgstr "Новое событие"
+
+#: src/Widgets/dialog.ui:43 src/Widgets/eventrowcontent.ui.vala:44
+#: src/Widgets/eventrowcontent.ui.vala:79
+msgid "Cancel"
+msgstr "Отмена"
+
+#: src/Widgets/dialog.ui:57
+msgid "Event Name"
+msgstr "Название события"
+
+#: src/Widgets/dialog.ui:68
+msgid "Event Date"
+msgstr "Дата события"
+
+#: src/Widgets/eventrowcontent.ui:65
+msgid "days"
+msgstr "дней"
+
+#: src/Widgets/mainwindow.ui.vala:80 src/Widgets/mainwindow.ui.vala:113
+#: src/Widgets/mainwindow.ui.vala:120
+msgid "events"
+msgstr "событий"
+
+#: src/Widgets/mainwindow.ui.vala:154
+msgid "Track events until they happen or since they happened."
+msgstr "Отслеживайте события, пока они не произошли или с тех пор, как они произошли"
+
+#. TRANSLATORS: 'Name <email@domain.com>' or 'Name https://website.example'
+#: src/Widgets/mainwindow.ui.vala:161
+msgid "translator-credits"
+msgstr "Давид Лапшин <ddaudix@gmail.com>"
+
+#: src/Widgets/eventrowcontent.ui.vala:41
+msgid "Delete Past Event?"
+msgstr "Удалить прошедшее событие?"
+
+#: src/Widgets/eventrowcontent.ui.vala:42
+msgid ""
+"Deleting this past event will not save it in the past log and will stop "
+"tracking the days since the event happened."
+msgstr ""
+"Удаление этого прошедшего события не сохранит его в журнале прошлых событий и остановит "
+"отслеживание дней, прошедших с момента события."
+
+#: src/Widgets/eventrowcontent.ui.vala:45
+#: src/Widgets/eventrowcontent.ui.vala:80
+msgid "Delete"
+msgstr "Удалить"
+
+#: src/Widgets/eventrowcontent.ui.vala:76
+msgid "Delete Upcoming Event?"
+msgstr "Удалить предстоящие событие?"
+
+#: src/Widgets/eventrowcontent.ui.vala:77
+msgid ""
+"Deleting this upcoming event will not save it in the upcoming log and will "
+"stop tracking the days until the event happens."
+msgstr ""
+"Удаление этого предстоящего события не сохранит его в журнале прошлых событий и остановит "
+"отслеживание дней, пока событие не произойдет."
