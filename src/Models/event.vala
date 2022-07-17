@@ -20,7 +20,7 @@ namespace Countdown {
     public class Event : Object, Json.Serializable {
         public string id { get; set; default = Uuid.string_random (); }
         public string title { get; set; }
-        public string date { get; set; }
+        public DateTime date { get; set; }
         public bool passed { get; set; }
 
         public static Event from_json (Json.Node node) requires (node.get_node_type () == OBJECT) {
@@ -43,11 +43,32 @@ namespace Countdown {
         }
 
         bool deserialize_property (string property_name, out Value @value, ParamSpec pspec, Json.Node property_node) {
-            return default_deserialize_property (property_name, out @value, pspec, property_node);
+            if (property_name == "date") {
+                var date = new DateTime.from_iso8601 (property_node.get_string (), null);
+                if (date == null) return false;
+
+                var vout = Value (typeof (DateTime));
+                vout.set_boxed (date);
+                @value = vout;
+
+                return true;
+            } else {
+                return default_deserialize_property (property_name, out @value, pspec, property_node);
+            }
         }
 
         Json.Node serialize_property (string property_name, Value @value, ParamSpec pspec) {
-            return default_serialize_property (property_name, @value, pspec);
+            if (property_name == "date") {
+                var dt = @value as DateTime;
+                var node = new Json.Node (VALUE);
+                var date = "";
+                if (dt != null) date = dt.to_string();
+                node.set_string (date);
+
+                return node;
+            } else {
+                return default_serialize_property (property_name, @value, pspec);
+            }
         }
     }
 }
