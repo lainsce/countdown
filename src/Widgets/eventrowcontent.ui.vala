@@ -126,28 +126,12 @@ public class Countdown.EventRowContent : Adw.Bin {
         return update_date_line (event.date);
     }
 
-    public string update_date_line (string date) {
+    public string update_date_line (DateTime date) {
         print ("Updated event!\n");
         var res = "";
-        try {
-            var reg = new Regex("""(?m)(?<day>\d{2})/(?<month>\d{2})/(?<year>\d{4})""");
-            GLib.MatchInfo match;
 
-            if (reg.match (date, 0, out match)) {
-                var e = new GLib.DateTime.now_local ();
-                var d = new DateTime.local (int.parse(match.fetch_named ("year")),
-                                            int.parse(match.fetch_named ("month")),
-                                            int.parse(match.fetch_named ("day")),
-                                            0,
-                                            0,
-                                            0.0);
-
-                res = "%s".printf(((d.difference(e) / 86400000000).to_string()));
-            }
-        } catch (GLib.RegexError re) {
-            warning ("%s".printf(re.message));
-        }
-        
+        var e = new GLib.DateTime.now_local ();
+        res = "%s".printf(((date.difference(e) / 86400000000).to_string()));
         if (int.parse(res) == 0 && event.passed != true) {
             event.passed = true;
             res = "-1";
