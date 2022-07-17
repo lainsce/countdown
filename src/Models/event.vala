@@ -44,7 +44,8 @@ namespace Countdown {
 
         bool deserialize_property (string property_name, out Value @value, ParamSpec pspec, Json.Node property_node) {
             if (property_name == "date") {
-                var date = new DateTime.from_iso8601 (property_node.get_string (), null);
+                string[] d = property_node.get_string ().split ("-", 2);
+                var date = new DateTime.from_iso8601 ("%04d-%s".printf (d[0].to_int (), d[1]), null);
                 if (date == null) return false;
 
                 var vout = Value (typeof (DateTime));
