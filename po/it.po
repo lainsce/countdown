@@ -129,7 +129,7 @@ msgid ""
 "tracking the days since the event happened."
 msgstr ""
 "L'eliminazione di questo evento passato non lo salverà nel file log e verrà interrotto "
-"il tracking dei giorni trascorsi dall'evento".
+"il tracking dei giorni trascorsi dall'evento."
 
 #: src/Widgets/eventrowcontent.ui.vala:45
 #: src/Widgets/eventrowcontent.ui.vala:80
