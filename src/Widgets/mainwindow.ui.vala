@@ -147,19 +147,18 @@ namespace Countdown {
             };
 
             var program_name = "Countdown" + Config.NAME_SUFFIX;
-            Gtk.show_about_dialog (this,
-                                   "program-name", program_name,
-                                   "logo-icon-name", Config.APP_ID,
-                                   "version", Config.VERSION,
-                                   "comments", _("Track events until they happen or since they happened."),
-                                   "copyright", COPYRIGHT,
-                                   "authors", AUTHORS,
-                                   "artists", null,
-                                   "license-type", Gtk.License.GPL_3_0,
-                                   "wrap-license", false,
-                                   // TRANSLATORS: 'Name <email@domain.com>' or 'Name https://website.example'
-                                   "translator-credits", _("translator-credits"),
-                                   null);
+            var about_window = new Adw.AboutWindow ();
+
+            about_window.set_application_icon(Config.APP_ID);
+            about_window.set_version(Config.VERSION);
+            about_window.set_comments(_("Track events until they happen or since they happened."));
+            about_window.set_copyright(COPYRIGHT);
+            about_window.set_developers(AUTHORS);
+            about_window.set_license_type(Gtk.License.GPL_3_0);
+            about_window.set_translator_credits(_("translator-credits"));
+
+            about_window.set_transient_for(this);
+            about_window.present();
         }
 	}
 }
