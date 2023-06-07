@@ -28,11 +28,11 @@ msgstr "событие;обратный отсчет;дни;"
 
 #: data/io.github.lainsce.Countdown.metainfo.xml.in:7
 msgid "Track events until they happen or since they happened"
-msgstr "Отслеживайте события, пока они не произошли или с тех пор, как они произошли"
+msgstr "Отслеживайте событий до того, как они произошли, или после того, как они произошли"
 
 #: data/io.github.lainsce.Countdown.metainfo.xml.in:9
 msgid "Tracking events until they happen, or since they happened, easier."
-msgstr "Отслеживание событий, пока они не произошли или с тех пор, как они произошли, проще."
+msgstr "Отслеживание событий до того, как они произошли, или после того, как они произошли, проще."
 
 #: data/io.github.lainsce.Countdown.metainfo.xml.in:19
 msgid "Lains"
@@ -45,7 +45,7 @@ msgstr "Выпуск: Первый выпуск"
 #: src/Widgets/keys.ui:12
 msgctxt "shortcut window"
 msgid "General"
-msgstr "Общее"
+msgstr "Основные"
 
 #: src/Widgets/keys.ui:16
 msgctxt "shortcut window"
@@ -113,7 +113,7 @@ msgstr "событий"
 
 #: src/Widgets/mainwindow.ui.vala:154
 msgid "Track events until they happen or since they happened."
-msgstr "Отслеживайте события, пока они не произошли или с тех пор, как они произошли"
+msgstr "Отслеживайте событий до того, как они произошли, или после того, как они произошли"
 
 #. TRANSLATORS: 'Name <email@domain.com>' or 'Name https://website.example'
 #: src/Widgets/mainwindow.ui.vala:161
@@ -146,5 +146,5 @@ msgid ""
 "Deleting this upcoming event will not save it in the upcoming log and will "
 "stop tracking the days until the event happens."
 msgstr ""
-"Удаление этого предстоящего события не сохранит его в журнале прошлых событий и остановит "
+"Удаление этого предстоящего события не сохранит его в журнале предстоящих событий и остановит "
 "отслеживание дней, пока событие не произойдет."
