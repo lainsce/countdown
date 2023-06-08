@@ -146,9 +146,10 @@ namespace Countdown {
                 null
             };
 
-            var program_name = "Countdown" + Config.NAME_SUFFIX;
+            var program_name = _("Countdown") + Config.NAME_SUFFIX;
             var about_window = new Adw.AboutWindow ();
 
+            about_window.set_application_name(program_name);
             about_window.set_application_icon(Config.APP_ID);
             about_window.set_version(Config.VERSION);
             about_window.set_comments(_("Track events until they happen or since they happened."));
