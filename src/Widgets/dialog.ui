@@ -75,7 +75,7 @@
                       <object class="GtkEntry" id="event_date_day_entry">
                         <property name="valign">center</property>
                         <property name="max_width_chars">2</property>
-                        <property name="placeholder_text">DD</property>
+                        <property name="placeholder_text" translatable="yes">DD</property>
                       </object>
                     </child>
                     <child>
@@ -87,7 +87,7 @@
                       <object class="GtkEntry" id="event_date_month_entry">
                         <property name="valign">center</property>
                         <property name="max_width_chars">2</property>
-                        <property name="placeholder_text">MM</property>
+                        <property name="placeholder_text" translatable="yes">MM</property>
                       </object>
                     </child>
                     <child>
@@ -99,7 +99,7 @@
                       <object class="GtkEntry" id="event_date_year_entry">
                         <property name="valign">center</property>
                         <property name="max_width_chars">4</property>
-                        <property name="placeholder_text">YYYY</property>
+                        <property name="placeholder_text" translatable="yes">YYYY</property>
                         <property name="activates-default">1</property>
                       </object>
                     </child>
