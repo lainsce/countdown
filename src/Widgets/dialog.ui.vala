@@ -26,25 +26,31 @@ namespace Countdown {
             event_date_day_entry.max_length = 2;
             event_date_month_entry.max_length = 2;
             event_date_year_entry.max_length = 4;
-            event_name_entry.notify["text"].connect (() => {
-                event_date_year_entry.notify["text"].connect (() => {
-                    if (event_name_entry.get_text () != "") {
-                        new_button.sensitive = true;
-                    } else {
-                        new_button.sensitive = false;
-                    }
-                });
-            });
+
+            event_name_entry.notify["text"].connect (update_new_button);
+            event_date_day_entry.notify["text"].connect (update_new_button);
+            event_date_month_entry.notify["text"].connect (update_new_button);
+            event_date_year_entry.notify["text"].connect (update_new_button);
+        }
+
+        private DateTime get_datetime () {
+            return new DateTime.local (int.parse (event_date_year_entry.get_text ()),
+                                       int.parse (event_date_month_entry.get_text ()),
+                                       int.parse (event_date_day_entry.get_text ()),
+                                       0,
+                                       0,
+                                       0.0);
+        }
+
+        private void update_new_button () {
+            bool date_is_valid = get_datetime () != null;
+            bool name_is_valid = event_name_entry.get_text () != "";
+            new_button.sensitive = (date_is_valid && name_is_valid);
         }
 
         [GtkCallback]
         public void on_new_event_requested () {
-            var d = new DateTime.local (int.parse(event_date_year_entry.get_text ()),
-                                        int.parse(event_date_month_entry.get_text ()),
-                                        int.parse(event_date_day_entry.get_text ()),
-                                        0,
-                                        0,
-                                        0.0);
+            var d = get_datetime ();
             if (d == null) return;
 
             var event = new Event ();
