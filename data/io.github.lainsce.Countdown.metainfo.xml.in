@@ -44,7 +44,7 @@
     <translation type="gettext">io.github.lainsce.Countdown</translation>
     <releases>
         <release version="1.0.0" date="2022-04-20">
-            <description>
+            <description translate="no">
                 <p>Release: First Release</p>
             </description>
         </release>
