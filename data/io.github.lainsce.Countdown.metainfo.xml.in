@@ -3,7 +3,7 @@
     <id>@app_id@</id>
     <metadata_license>CC0-1.0</metadata_license>
     <project_license>GPL-3.0+</project_license>
-    <name translatable="no">Countdown</name>
+    <name translate="no">Countdown</name>
     <summary>Track events until they happen or since they happened</summary>
     <description>
         <p>Tracking events until they happen, or since they happened, easier.</p>
@@ -16,10 +16,14 @@
       <kudo>ModernToolkit</kudo>
       <kudo>HiDpiIcon</kudo>
     </kudos>
-    <developer_name translatable="no">Lains</developer_name>
+    <developer_name translate="no">Lains</developer_name>
+    <developer id="io.github.lainsce">
+      <name translate="no">Lains</name>
+    </developer>
     <url type="homepage">https://github.com/lainsce/Countdown/</url>
     <url type="bugtracker">https://github.com/lainsce/Countdown/issues</url>
     <url type="donation">https://www.ko-fi.com/lainsce/</url>
+    <url type="vcs-browser">https://github.com/lainsce/Countdown/</url>
     <url type="translate">https://github.com/lainsce/Countdown/blob/master/po/README.md</url>
     <screenshots>
         <screenshot type="default">
@@ -41,7 +45,7 @@
     <translation type="gettext">io.github.lainsce.Countdown</translation>
     <releases>
         <release version="1.0.0" date="2022-04-20">
-            <description>
+            <description translate="no">
                 <p>Release: First Release</p>
             </description>
         </release>
